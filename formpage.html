@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEW FORM</title>
+    <link rel="stylesheet" href="formentrystyle.css">
+</head>
+<body id="mainBody">
+  <div id="extraDetails">
+   <div id="topFlex"><div id="modeChanger" class="mode-Changer">
+      <div id="round"></div>  
+      </div>
+      <div id="modeName">  
+          <span id="light">LIGHT MODE</span>
+        <span id="dark">DARK MODE</span>
+      </div>
+    </div>
+    <div id="bottomFlex">
+      <div id="analogClock">
+        <div id="planet"></div>
+        <div id="hourHand" class="hand"></div>
+        <div id="minuteHand" class="hand"></div>
+        <div id="secondHand" class="hand"></div>
+      </div>    <!--analog clock div closer-->
+      <div id="clockChanger">Change To Analog Clock</div>
+      <div id="digitalClock">00:00:00</div>
+    </div>   <!--bottom flex div closer-->
+  </div>    <!--extra details div closer-->
+<img id="biggerButton" src="BIGGER BUTTON.png">
+<img id="smallerButton" src="SMALLER BUTTON.png">
+<div id="mainContainer">
+  <img id="logout" src="logout.png" height="50px" width="50px">  
+  <div id="box"> <h1 id="heading">WELCOME DEBMALLYA ROY</h1></div>
+  
+  <br>
+
+    <form>
+    <div class="newFormCreation">
+          <label id="labelMobileNumber" for="mobileNumber">PHONE NUMBER:</label>
+      <input type="number" name="mobileNumber" id="mobileNumber" placeholder="Type the contact number" oninput="this.value=this.value.slice(0,10)" required> 
+      <button id="priceCheck">PRICE CHECK</button>
+    </div>
+      <br>
+      <br>
+      <div class="newFormCreation">
+        <button id="newCreationButton">CREATE NEW DEALSHEET</button>
+      </div>
+      <br>
+      <br>      
+  <div id="msgBoxFlex" class="msgFlex">    
+<div id="confirmationBox">
+    <div id="msgBox">
+            <div id="firstMessage">DO YOU WANT TO PROCEED TO THE DEAL SHEET?</div>
+            <div id="anotherMessage">Please Enter a Valid Mobile Number</div>
+    <br>
+    <br>
+        <div id="msgButtonFlex">
+        <button type="submit" class="confirmation" id="YES">YES</button>
+        <button class="confirmation" id="NO">NO</button>
+        <button class="confirmation" id="okButton">OK</button>     
+        </div>
+    </div>
+</div>
+</div>
+</form>
+<div id="blankDealSheetFlex"><button id="blankDealSheet">CREATE BLANK DEALSHEET</button></div>
+<div id="loader">
+<div id="firstCircle" class="circle">
+  <div id="secondCircle" class="circle">
+    <div id="thirdCircle" class="circle">
+    </div>
+  </div>
+</div>
+</div>
+</div>   <!--main div closer-->
+  <script src="form.js"></script>
+  
+</body>
+</html>

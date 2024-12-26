@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEAL SHEET FORM</title>
+    <link rel="stylesheet" href="formentrystyle.css">
+</head>
+<body id="dupeBody">
+  <div id="supervisor">
+  <div id="supervisorFirstFlex"><label class="supervisorLabel" for="supervisorId" id="labelSupervisorId">ENTER USER ID:</label>
+      <input class="supervisorText" type="number" id="supervisorId">
+      <br>
+      <br>
+      <br>
+      <br>
+      <label class="supervisorLabel" for="supervisorPassword" id="labelSupervisorPassword">ENTER USER PASSWORD:</label>
+      <input class="supervisorText" type="number" id="supervisorPassword">
+  </div>
+      <div id="supervisorSecondFlex"><div id="submit">SUBMIT</div></div>
+    </div>  
+  <div id="extraDetails">
+        <div id="topFlex"><div id="modeChanger" class="mode-Changer">
+           <div id="round"></div>  
+           </div>
+           <div id="modeName">  
+               <span id="light">LIGHT MODE</span>
+             <span id="dark">DARK MODE</span>
+           </div>
+         </div>
+         <div id="bottomFlex">
+           <div id="analogClock">
+             <div id="planet"></div>
+             <div id="hourHand" class="hand"></div>
+             <div id="minuteHand" class="hand"></div>
+             <div id="secondHand" class="hand"></div>
+           </div>    <!--analog clock div closer-->
+           <div id="clockChanger">Change To Analog Clock</div>
+           <div id="digitalClock">00:00:00</div>
+         </div>   <!--bottom flex div closer-->
+       </div>    <!--extra details div closer-->
+     <button id="bigger">></button>
+     <button id="smaller"><</button>
+
+   <div id="formRightFlex">
+    <img id="logout" src="logout.png" height="50px" width="50px">    
+    <div id="headerFlex"><span id="formHeader">PROVIDE THE CUSTOMER INFO</span></div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div id="formBody">
+        
+    <label class="formLabel" id="labelCustomerName" for="customerName">NAME OF THE CUSTOMER:<sup>(*)</sup></label>
+    <input class="formText" type="text" id="customerName" placeholder="Enter The Customer Name" required>
+              <br>
+              <br>
+  <label class="formLabel" id="labelModelName" for="modelName">MODEL:<sup>(*)</sup></label>
+    <select id="modelName" class="formText" onchange="updateChanges()" required>
+    <option value="">--SELECT MODEL--</option>
+    <option value="BOLERO">BOLERO</option>
+    <option value="BOLERO_NEO">BOLERO NEO</option>
+    <option value="BOLERO_NEO_PLUS">BOLERO NEO PLUS</option>
+    <option value="SCORPIO_CLASSIC">SCORPIO</option>
+    <option value="SCORPIO_N">SCORPIO-N</option>
+    <option value="NEW_THAR">NEW THAR</option>
+    <option value="THAR_ROXX">THAR ROXX</option>
+    <option value="XUV300">XUV300</option>
+    <option value="XUV3XO">XUV3XO</option>
+    <option value="XUV700">XUV700</option>
+</select>
+
+
+<label class="formLabel" id="labelVariant" for="variant">VARIANT NAME<sup>(*)</sup>:</label>
+<select id="variant" class="formText" onchange="updatePrice()" required>
+    <option>...Select Variant...</option>
+</select>
+<br>
+<br>
+<label class="formLabel" id="labelMainMobileNumber" for="mainMobileNumber">PHONE NUMBER:<sup>(*)</sup></label>
+<input class="formText" type="text" id="mainMobileNumber">
+
+<label class="formLabel" id="labelColor" for="color">COLOR:<sup>(*)</sup></label>
+<input class="formText" type="text" id="color" placeholder="vehicle color" required>
+<br>
+<br>
+
+<label class="formLabel" id="labelEnqSource" for="enqSource">SOURCE OF ENQUIRY:<sup>(*)</sup></label>
+<select id="enqSource" class="formText" required>
+    <option></option>
+    <option value="FIELD">FIELD</option>
+    <option value="DIGITAL">DIGITAL</option>
+    <option value="WALK-IN">WALK-IN</option>
+    <option value="TELEPHONE">TELEPHONE</option>
+</select>
+
+
+<label class="formLabel" id="labelFinance" for="finance"> FINANCE:
+  
+    <input class="formText" type="text" id="finance" placeholder="Enter The Finance Name">
+    </label>
+<br>
+<br>
+<label class="formLabel" id="exchange" for="exchangeYes"> EXCHANGE IS APPLICABLE?<sup>(*)</sup>
+<input class="formText" type="radio" style="width: 2cap;" id="exchangeYes" name="selector" required value="YES">YES
+</label>
+<label class="formLabel" id="exchange" for="exchangeNo">
+<input class="formText" type="radio" style="width: 2cap;" id="exchangeNo" required name="selector" value="NO">NO
+</label>
+<br>    
+<br>
+<div id="formButton">
+<button id="details">GET DETAILS</button>
+<button id="editDetails">EDIT</button>
+</div>
+</div>
+<div id="extraInfo"> <div id="scheme">
+<h2 id="offer">THE FOLLOWING PACKAGE HAS BEEN OFFERED TO THE CUSTOMER:</h2>
+<button id="previousPage">Go Back</button>
+</div>
+<br>
+
+<label class="formLabel" id="labelExShowRoom" for ="exShowRoom">EX-SHOWROOM PRICE:</label>
+<input class="formText" type="number" id="exShowRoom">
+<br>
+<br>
+<label class="formLabel" id="labelSchemeDiscount" for="schemeDiscount">SCHEME DISCOUNT:</label>
+<input class="formText" type="number" id="schemeDiscount">
+<br>
+<br>
+<label class="formLabel" id="labelRegistration" for="registration">REGISTRATION:</label>
+<input class="formText" type="number" id="registration">
+<br>
+<br>
+<label class="formLabel" id="labelInsurance" for="insurance">INSURANCE:</label>
+<input class="formText" type="number" id="insurance">
+<br>
+<br>
+<label class="formLabel" id="labelTCS" for="TCS">TCS:</label>
+<input class="formText" type="number" id="TCS">
+<br>
+<br>
+<label class="formLabel" id="labelAccessories" for="accessories">ACCESSORIES:</label>
+<input class="formText" type="number" id="accessories">
+<br>
+<br>
+<label class="formLabel" id="labelShield" for="shield">SHIELD:</label>
+<input class="formText" type="number" id="shield">
+<br>
+<br>
+<label class="formLabel" id="labelRSA" for="RSA">RSA:</label>
+<input class="formText" type="number" id="RSA">
+<br>
+<br>
+<label class="formLabel" id="labelSLD" for="SLD">S.L.D & VLTD:</label>
+<input class="formText" type="number" id="SLD">
+<br>
+<br>
+<label class="formLabel" id="labelExchangeVehicle" for="exchangeVehicle">EXCHANGE VEHICLE NAME:</label>
+<input class="formText" type="text" id="exchangeVehicle">
+<br>
+<br>
+<button id="view">VIEW DEALSHEET</button>
+</div>
+<div id="loaderDiv">
+<div id="loader">
+  <div id="firstCircle" class="circle">
+    <div id="secondCircle" class="circle">
+      <div id="thirdCircle" class="circle">
+      </div>
+    </div>
+  </div>
+  </div>  
+  <h1 id="pdfLoadingTime" style="text-align: center; color: white;"></h1>
+</div>
+    
+    <script src="formentry.js"></script>
+</body>
+</html>

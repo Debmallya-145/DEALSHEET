@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+    <title>Deal Sheet Login</title>
+    <link rel="stylesheet" href="dealsheetstyle.css">
+</head>
+<body>
+    
+    <div id="msgBox">Please use the correct credentials for Login
+        <br>
+        <br>
+        <button id="retry">RETRY</button>
+    </div>  
+    <div id="mainBox">
+        <div id="LoginPage"><h1 id="DealSheet"><big>DEAL SHEET</big></h1></div>
+        
+        <br>
+        <span id="scrollingText">This HTML page has been created by Debmallya Roy</span>
+        <br>
+        <input type="text" id="LoginID" class="loginmenu" name="UserName" placeholder="Type your UserName">
+        <br>
+        <br>
+        <input type="password" id="LoginPassword" class="loginmenu" name="UserPassword" placeholder="Type your Password">
+        <br>
+        <br>
+        <button id="LogInButton">LOG IN</button>
+        <br>
+        <br>
+        <div id="validationCheck"><label for="validationCode" id="Label1">Enter the Validation Code:</label>
+        <input id="validationCode" type="number" name="validationCode" placeholder="Type the Validation Code" oninput="this.value=this.value.slice(0,6)" required>
+            <button id="validationButton">VALIDATE</button>
+            <button id="generationButton">CODE GENERATE</button>
+        </div>
+    
+    </div>
+
+        <script src="dealsheet.js"></script>
+    </body>
+</html>

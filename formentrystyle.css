@@ -1,0 +1,871 @@
+
+#mainBody{
+    display: flex;   
+    background-image: url(DAY.jpg);
+    background-repeat: round;
+    background-size: cover;
+    justify-content: center;
+    transition: all 1.5s ease;
+    aspect-ratio: 16/10  ;
+    max-height: 100vw;
+    overflow: hidden;
+    zoom: 100%;
+}
+#mainContainer{
+    width: 100vw;
+    height: 100vh;
+}
+
+#confirmationBox{
+background-color: transparent;
+border: 3px solid black;
+width: 35em;
+height: 13em;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+#msgBox{
+box-shadow: 2px 2px 20px 5px black ;
+background-color: wheat;
+width: 97%;
+height: 95%;
+position: relative;
+font-size: 25px;
+text-align: center;
+border: 2px groove black;
+}
+
+.confirmation{
+    font-size: 1.5em;
+    box-shadow: 1px 3px 3px 3px black;
+    transition: all 100ms ease;     
+}
+.confirmation:active{
+    transform: translate(0.95);
+    transform: translateY(3px);
+    box-shadow: 0px 0px 3px 1px black;
+}
+
+#msgButtonFlex{
+    display: flex;
+    justify-content: space-evenly;   
+    
+}
+/* full msg box */
+#msgBoxFlex{                              
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+}
+#anotherMessage{
+    display: none;
+}
+.newFormCreation{
+    display: flex;
+    justify-content: center;
+}
+#newCreationButton,#blankDealSheet{
+    height:50px;
+    font-weight: bolder;
+    transition: all 100ms linear;
+    box-shadow: 0px 5px 3px 3px black;
+    position: relative;
+    z-index: 1;
+}
+#newCreationButton:active,#blankDealSheet:active{
+    transform: scale(0.95);
+    box-shadow: 0px 0px 3px 3px black;
+}
+#newCreationButton::before,#blankDealSheet::before{
+    content: "";
+    position: absolute;
+    height: 00%;
+    width: 100%;
+    background-image: linear-gradient(#69247c,#da498d,#fac67a,#f9e6cf);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    left: 0%;
+    top:0%;
+    z-index: -1;
+    transition: all 0.4s linear;
+}
+#newCreationButton:hover::before,#blankDealSheet:hover::before{
+height: 100%;
+}
+#blankDealSheet{
+    transition: all 0.8s linear;
+}
+#blankDealSheetFlex{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);    
+}
+#heading{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+    text-align: center;
+    background-image: repeating-linear-gradient(#640d5f,#d91656,#ee66a6,#ffeb55);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: headingAnimation 5s linear 0.2s infinite;
+}
+@keyframes headingAnimation {
+    0%{transform: scale(1);}
+    50%{transform: scale(1.5);}
+    100%{transform: scale(1);}
+}
+
+#box{
+    height: 15vh;
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+}
+#extraDetails{
+    height:100vh;
+    width: 0vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    transition: all 1s linear;
+    z-index: 1;    
+    position: relative;
+    opacity: 0;
+    border-right: 2px solid black;
+}
+#topFlex,#bottomFlex{
+display: flex;
+flex-direction: column;
+position: relative;
+justify-content: space-between;
+align-items: center;
+height: 30%;
+width: 100%;
+}
+#bottomFlex{
+    justify-content: space-around;
+    height: 100%;   
+}
+#modeChanger{
+    margin-top: 20px;
+    background-color:whitesmoke;
+    height: 40%;
+    width: 90%;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    align-items: center;
+    transition: all 1s linear;
+    position: relative;
+    background-image: url(ButtonDay.jpg);
+    background-repeat: round;
+}
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+@keyframes spinAnimate {
+    from{
+        --angle:0deg;
+    }
+    to{
+        --angle:360deg;
+    }
+}
+
+#modeChanger::after{
+content: "";
+height: 100%;
+width: 100%;
+position: relative;
+background-image: conic-gradient(from var(--angle),yellow 10%, transparent 30%) ;
+z-index: -1;
+border-top-left-radius: 50px;
+border-top-right-radius: 50px;
+border-bottom-left-radius: 50px;
+border-bottom-right-radius: 50px;
+padding: 6px;
+margin-left: -2%;
+margin-right: -2%;
+animation: spinAnimate 2s linear 0s infinite normal;
+}
+
+#round{
+    width:26%;
+    height: 100%;
+    border-radius: 50%;
+    margin-left: 5px;
+    position: absolute;
+    transition: all 1s ease-in-out;
+    background-image: linear-gradient(#001f3f,#3a6d8c,#6a9ab0,#ead8b1);
+}
+#modeName{
+    height: 25%;
+    width: 95%;
+    border: 2px solid black;
+    align-self: flex-start;
+    border-radius: 15px;
+position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+#light,#dark{
+    height: fit-content;
+    width: fit-content;
+    border: 2px solid black;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    justify-content: space-around;
+    font-weight: bolder;
+    font-size: 25px;
+    border-radius: 20px;
+    background-color: aliceblue;
+    text-align: center;
+    position: absolute;
+    transition: all 1s linear;
+    box-shadow: 0px 0px 30px 10px white;
+}
+#light{
+width: 100%;
+}
+#dark{
+transform: scale(0);
+font-size: 0px;
+}
+#analogClock{
+    border-radius: 50%;
+    height: 170px;
+    width: 170px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 5%;   
+    display: none;
+}
+
+#planet{
+    position: absolute;
+    background-image: url(sun.png);
+    background-size: cover;
+    background-repeat: round;
+    animation: clockSpin 60s linear infinite;
+    width: 100%;
+    height: 100%;
+    transition: all 1.5s linear;
+}
+@keyframes clockSpin {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+    
+}
+.hand{
+    position: absolute;
+    height: 35%;
+    width: 5%;
+    background-color: black;
+    transform-origin: bottom;
+    left:50%;
+    bottom: 50%;
+    transform: translatex(-50%);
+}
+#secondHand{
+    height: 50%;
+    width: 1%;
+}
+#minuteHand{
+    width: 3%;
+    height: 45%;
+    line-clamp: round;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;   
+}
+#clockChanger{
+    position: absolute;
+    width: 48%;
+    height: 10%;
+    font-weight: bolder;
+    text-decoration: 1px solid underline;
+    top:32%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1em;
+    background-color: #eecda3;
+    box-shadow: 0px 5px 4px black;
+    border-radius: 20px;
+    transition: all 100ms linear;
+}
+#clockChanger::after{
+    content: "";
+    background-image: linear-gradient(#ff2929,#3d3bf3,#9694ff,#ebeaff);
+    height: 00%;
+    width: 100%;
+    position: absolute;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    top: 0%;
+    left: 0%;
+    border-radius: 20px;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+}
+#clockChanger:hover::after{
+    height: 100%;
+    
+}
+#clockChanger:active{
+    transform: scale(0.95);
+    box-shadow: 0px 0px 4px black;
+    transform: translatey(5px);
+}
+#digitalClock{
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    background-image: linear-gradient(#4379F2,#FFEB00,#6EC207,#117554);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#bigger,#smaller{
+    border: 2px solid Black;
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 30px;
+    font-weight: 900;
+    background-color: wheat;
+}
+#smaller{
+    display: none;
+}
+#biggerButton,#smallerButton{    
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    padding-left: 10px;
+    padding-right: 10px;
+    top: 0.8em;
+    left: 0%;
+}
+#smallerButton{
+    display: none;
+}
+#submit{
+    font-size: 2em;
+}
+#supervisor{
+    background-image: linear-gradient(to top right,#fff0dc,#f0bb7b,#543a14,#131010);
+    height: 50vh;
+    width: 50vw;
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 3px inset greenyellow;
+    transform: scale(0);
+    transition: all 0.5s linear;
+}
+.supervisorLabel{
+    font-size: 1.5em;
+    margin-right: 1em;   
+}
+.supervisorText{
+    font-size: 1.5em;
+}
+#supervisorSecondFlex{
+    align-self: safe;
+    margin-top: 2em;
+}
+#submit{
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 3px 3px 2px black;
+}
+#submit:active{
+    transform: scale(0.95) translatey(3px);
+    box-shadow: 0px 0px 3px 0px black;
+}
+#labelMobileNumber{
+    font-weight: bolder;
+    font-size: 1.5em;
+    text-align: center;
+    color: yellow;
+}
+
+#mobileNumber{
+margin-left:10px ;
+font-size: large;
+}
+#firstCircle{
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border-top: 0.7em solid red;
+    animation: spinLoader 2s linear 0s infinite;
+}
+#secondCircle{
+    height: 80%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border-top: 0.7em solid green;
+    animation: spinLoader 2s linear 0s infinite;
+}
+#thirdCircle{
+    height: 80%;
+    width: 80%;
+    border-radius: 50%;
+    border-top: 0.7em solid yellow ;
+    animation: spinLoader 2s linear 0s infinite;
+}
+#loaderDiv{
+    height: 100%;
+    width: 100%;
+    z-index: +1;
+    position: absolute;
+    background-color: gray;
+    opacity: 0.95;
+    display: none;
+}
+#loader{
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    display: none;
+}
+
+@keyframes spinLoader{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+#dupeBody{
+    display: flex;
+    background-image: url(DAY.jpg);
+    background-repeat: repeat-y;
+    background-size: cover;
+    transition: all 1.5s ease;
+    aspect-ratio: 16/10  ;
+    zoom: 100%;
+}
+
+#formRightFlex{ 
+    position: relative;
+    flex-wrap: wrap;    
+    width: 100vw;
+    min-height: 100vh;
+}
+#headerFlex{
+    display: flex; 
+    justify-content: center;
+    align-self: flex-start;
+    margin-top: 1%;
+ 
+}
+#formHeader{
+    text-align: center;
+    font-size: 3em;
+    color: white;
+    font-weight: bold;
+    background-image: -webkit-repeating-linear-gradient(#ffafbd,#6dd5ed,#eecda3,#734b6d,#ffb88c,#a8e063);    
+    margin-top: 0.5em;
+    border:2px solid black;
+}
+#formBody{
+    padding-left: 20px;
+position: relative;
+bottom: 90px;
+row-gap: 2px;
+align-items: center;
+}
+ .formLabel{
+ font-size: 1.3em;
+ font-weight: bold;
+ align-self: center;
+color: white;
+}
+
+.formText{
+    height: 2em;
+    margin-right: 5em;
+    font-size: large;
+    font-weight: 300;
+    align-self: center;
+    
+}
+h2{
+    position: relative;
+    font-size: 1.5em;
+    text-decoration: double darkgoldenrod underline;
+    text-align: center;
+    transition: all 1.5s linear;
+}
+sup{
+    font-size: 15px;
+    color: rgba(240,12,12,1);
+}
+
+#modelName,#variantName,#color{
+    margin-right: 3px;
+    width:10em;
+    margin-top: 5px;
+}
+#labelVariantName{
+    margin-left: 0%;
+}
+
+#mainMobileNumber{
+    width: 17vw;
+}
+#enqSource{
+    width: fit-content;
+}
+#finance{
+    width: 300px;
+}
+#logout{
+    position: absolute;
+    top:10px;
+    right: 20px;
+    background-image: repeating-linear-gradient(#5a639c,#7776b3,#9b86bd,#e2bbe9);
+    transition: all 0.1s linear;
+    box-shadow: 0px 2px 3px 2px black;
+}
+#logout:active{
+box-shadow: 0px 0px 3px 2px black;
+transform: scale(0.95) translateY(3px); 
+}
+#exchangeYes,#exchangeNo{
+    position: relative;
+    left: 70px;
+    top:5px;
+}
+#scheme{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#details,#editDetails{
+    margin-top: 2%;
+    font-size: x-large;
+    width: 7em;
+    z-index: 1;
+    text-decoration: solid underline;
+    border-radius: 20px;
+    box-shadow: 0px 5px 4px black; 
+    transition: all 0.01s linear;
+    width: 168px;
+    height: 60px;
+}
+#details{
+    position:relative;
+}
+#details::after{
+    content: "";
+    height: 0%;
+    width: 100%;
+    position: absolute;
+    background-image: linear-gradient(to bottom left,#365e32,#81a263,#e7d37f,#fd9b63);
+    top:0%;
+    z-index: -1;
+    left:0%;
+    border-radius: 20px;
+    transition: all 400ms ease-in;
+}
+#details:hover::after{
+    height: 100%;
+}
+#view{
+    margin-left: 40%;
+    margin-top: 2%;
+    font-size: x-large;
+    width: 7em;
+    position: relative;;
+    bottom: 30px;
+    text-decoration: solid underline;
+    border-radius: 20px;
+    box-shadow: 0px 5px 4px black; 
+    transition: all 0.01s linear;
+}
+#formButton{
+    display: flex;
+    justify-content: space-evenly;
+}
+#editDetails{
+    display: none;   
+}
+#details:active,#view:active,#editDetails:active,#previousPage:active{
+transform: scale(0.95);
+transform: translateY(5px);
+box-shadow: 0px 0px 4px black;
+}
+#customerName{
+    width: 40vw;   
+}
+#previousPage{
+    width: 168px;
+    height: 60px;
+    font-size: 1.5em;
+    margin-left: 10px;
+    font-size: x-large;
+    width: 7em;
+    position: relative;;
+    text-decoration: solid underline;
+    border-radius: 20px;
+    box-shadow: 0px 5px 4px black; 
+    transition: all 0.01s linear;
+}
+#exShowRoom,#schemeDiscount,#registration,#insurance,#TCS,#accessories,#shield,#RSA,#SLD,#exchangeVehicle{
+   width: 65vw;
+    box-shadow: 0px 5px 20px black;
+
+}
+#priceCheck{
+    font-size: 20px;
+    box-shadow: 0px 3px 2px 2px black;
+    transition: all 0.1s linear;
+    margin-left: 10px;
+  }
+  #priceCheck:active{
+    box-shadow: 0px 0px 2px 2px black;
+    transform: scale(0.95);
+  }
+#extraInfo{
+    display: none;
+    position: absolute;
+    top: 0%;
+    height: 100vh;
+}
+ @media (max-width:600px){
+    #mainBody{
+        overflow: hidden;
+        background-image: url(mobileDay.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    #dupeBody{
+        background-image: url(mobileDay.jpg);
+        overflow-x: hidden;
+        background-size: round;
+        background-repeat: repeat;
+    }
+    #heading{
+        font-size: 23px;
+        animation: none;
+    }
+    #labelMobileNumber,#mobileNumber{
+        font-size: 10px;
+    }
+ #clockChanger{
+    font-size: 10px;
+ }
+#logout{
+    height: 25px;
+    width: 20px;
+    right: 0%;
+}
+#biggerButton,#smallerButton{
+    width: 20px;
+    height: 20px;
+}
+#newCreationButton,#blankDealSheet,#priceCheck{
+    height: 35px;
+    width: 80px;
+    font-size: 9px;
+}
+/* this is the danger zone to make it responsive */
+#extraDetails{
+    background-image: linear-gradient(to right,#fbf6e9,#e3f0af,#5db996,#118b50);
+}
+#loader{
+    transform: scale(0.6);
+}
+.formLabel{
+    position: relative;
+    font-size: 8px;
+    right: 40px;
+}
+#customerName{
+font-size: 5px;
+width: 150px;
+margin-left: -40px;
+}
+#modelName{
+    font-size: 5px;
+    width: 70px;
+    height: 15px;
+    margin-left: -40px;
+}
+#blankDealSheet{
+    position: fixed;
+    top: 80px;
+}
+#labelVariant{
+    width: 70px;
+    margin-left: 60px;
+}
+#variant{
+    font-size: 5px;
+    width: 80px;
+   margin-left: -40px;
+   height: 15px; 
+}
+#mainMobileNumber{
+    font-size: 5px;
+    width: 70px;
+    margin-left: -42px;
+}
+#labelColor{
+    width: 70px;
+    margin-left: 30px;
+}
+#color{
+    font-size: 5px;
+    width: 70px;
+    margin-left: -45px;
+}
+#enqSource{
+    margin-left: -43px;
+    font-size: 5px;
+    height: 15px;
+}
+#labelFinance{
+    width: 70px;
+    margin-left: 30px;
+}
+#finance{
+    font-size: 5px;
+    width: 60px;
+    margin-left: 0px;
+}
+input[type="radio"]{
+    width: 10px;
+    height: 10px;
+    margin-right:20px;
+}
+#bigger,#smaller{
+    width: 15px;
+    height: 30px;
+    font-size: 10px;
+    padding-right: 15px;
+    transition: all 1s linear;
+}
+#details{
+    width: 90px;
+    height: 35px;
+    right: 34px;
+    font-size: small;
+}
+#offer{
+    font-size: 10px;
+}
+#previousPage{
+    width: 60px;
+    height: 30px;
+    font-size: 10px;
+    left: -30%;
+    top: 15px;
+}
+
+#formHeader{
+    width: 70vw;
+    font-size: 15px;
+    height: 30px;
+    position: absolute;
+    left: 5%;
+}
+#headerFlex{
+    width: 100vw;
+    position: relative;
+}
+#labelExShowRoom,#labelSchemeDiscount,#labelRegistration,#labelInsurance,#labelTCS,#labelAccessories,#labelShield,#labelRSA,#labelSLD,#labelExchangeVehicle{
+    margin-left: 10px;
+}
+#exShowRoom,#schemeDiscount,#registration,#insurance,#TCS,#accessories,#shield,#RSA,#SLD,#exchangeVehicle{
+    font-size: 8px;
+    margin-left: -40px;
+}
+#exchangeVehicle{
+width: 200px;
+}
+#view,#editDetails{
+    width: 80px;
+    height: 30px;
+    margin-top: 20px;
+    font-size: 11px;
+}
+#editDetails{
+    margin-top: 9px;
+    width: 90px;
+    height: 35px;
+    margin-left:-80px;
+}
+#digitalClock{
+font-size: 30px;
+}
+#round{
+    width: 50px;
+    height: 50px;
+}
+#supervisor{
+    left: 10%;
+    width: 290px;
+    z-index: 2;
+    height: 240px;
+}
+.supervisorLabel{
+    font-size: 13px;
+    margin-left: -20px;
+}
+.supervisorText{
+    width: 140px;
+    margin-left: -20px;
+
+}
+#supervisorId{
+    width: 200px;
+}
+#submit{
+    font-size: 20px;
+}
+#modeName,#dark,#light{
+    transform: scale(0.8);
+}
+
+ }

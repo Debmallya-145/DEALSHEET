@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="pdfStyle.css">
+</head>
+<body>
+
+    <main>
+        <button id="save">SAVE</button>
+    
+
+        <div id="a4page">
+            <h1><big><b>S.N MOTORS PVT. LTD.</b></big></h1>
+          <div id="outerFlex"><div id="dealSheetHeading"><big>DEAL SHEET</big></div></div>
+                <div class="one"><label class="pdfLabel" id="labelCutomerName" for id="customerName">CUSTOMER NAME:</label>
+                <div class="pdfText" id="customerName"></div>
+                </div>
+        <br>
+        <div class="one">
+        <label class="pdfLabel" id="labelModelName" for id="modelName">MODEL NAME:</label>
+        <div class="pdfText" id="modelName"></div>
+        </div>
+        <br>
+        <div class="one">
+            <label class="pdfLabel" id="labelVariantlName" for id="variantName">VARIANT:</label>
+            <div class="pdfText" id="variantName"></div>
+            <label class="pdfLabel" id="labelColor" for id="color">COLOUR:</label>
+            <div class="pdfText" id="color"></div>
+        </div>
+        <br>
+        <div class="one">
+            <label class="pdfLabel" id="labelSourceEnq" for id="sourceEnq">SOURCE OF ENQ:</label>
+            <div class="pdfText" id="sourceEnq"></div>
+            <label class="pdfLabel" id="labelMobile" for id="mobile">MOBILE:</label>
+            <div class="pdfText" id="mobile"></div>
+        </div>
+        <br>
+        <div class="one">
+        <label class="pdfLabel" id="labelExchange" for id="exchange">EXCHANGE VEHICLE IF ANY:</label>
+        <div class="pdfText" id="exchange"></div>
+        </div>
+        <br>
+        <div class="one">
+        <label class="pdfLabel" id="labelFinance" for id="finance">FINANCE:</label>
+        <div class="pdfText" id="finance"></div>
+        </div>
+        <br>
+    <div id="offer">THE FOLLOWING PACKAGES HAS BEEN OFFERED TO THE ABOVE CUSTOMER</div>
+<br>
+        <div class="one">
+        <label class="pdfLabel" id="labelExShowRoom" for id="exShowRoom">EX-SHOWROOM:</label>
+        <div class="pdfText" id="exShowRoom"></div>
+        </div>
+        <br>
+        <div class="one">
+        <label class="pdfLabel" id="labelSchemeDiscount" for id="schemeDiscount">SCHEME DISCOUNT:</label>
+        <div class="pdfText" id="schemeDiscount"></div>
+        </div>
+        <br>
+        <div class="one">
+        <label class="pdfLabel" id="labelRegistration" for id="registration">REGISTRATION:</label>
+        <div class="pdfText" id="registration"></div>
+        </div>
+        <br>
+        <div class="one">
+        <label class="pdfLabel" id="labelInsurance" for id="insurance">INSURANCE:</label>
+        <div class="pdfText" id="insurance"></div>
+        </div> 
+        <br>
+        <div class="one">
+        <label class="pdfLabel" id="labelTCS" for id="TCS">TCS:</label>
+        <div class="pdfText" id="TCS"></div>
+        </div>
+        <br>
+        <div class="one">
+        <label class="pdfLabel" id="labelAccessories" for id="accessories">ACCESSORIES:</label>
+        <div class="pdfText" id="accessories"></div>
+        </div>
+        <br>
+        <div class="one">
+        <label class="pdfLabel" id="labelShield" for id="shield">SHIELD:</label>
+        <div class="pdfText" id="shield"></div>
+        </div>
+        <br>
+        <div class="one">
+        <label class="pdfLabel" id="labelRSA" for id="RSA">RSA:</label>
+        <div class="pdfText" id="RSA"></div>
+        </div>
+        <br>
+        <div class="one">
+        <label class="pdfLabel" id="labelSLD" for id="SLD">SLD & VLTD:</label>
+        <div class="pdfText" id="SLD"></div>
+        </div>
+        <br>
+        <div class="one">
+        <label class="pdfLabel" id="labelExchangeVehicle" for id="exchangeVehicle">EXCHANGE VEHICLE:</label>
+        <div class="pdfText" id="exchangeVehicle"></div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+<div id="signature">
+    <div id="dashedLine">
+        <div id="dashedLine1">-----------------------------------------</div>
+        <div id="dashedLine2">-----------------------------</div>
+        <div id="dashedLine3">------------------------------------------</div>
+    </div>
+    <div id="humanSignature">
+        <div id="saleSignature">SIGNATURE OF SALE CONSULTANT</div>
+        <div id="customerSignature">SIGNATURE OF CUSTOMER</div>
+        <div id="gmSignature">SIGNATURE OF GENERAL MANAGER</div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+    </div>
+    <!-- </div>a4 page closer -->
+    </main>
+    <script src="pdf.js"></script>
+</body>
+</html>
