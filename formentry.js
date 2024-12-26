@@ -632,7 +632,7 @@ if(window.innerWidth<600){
         light.style.fontSize="25px";
         light.style.width="100%";
         dark.style.transform="scale(0)";
-        offer.style.color="black";
+        offer.style.color="white";
         dark.style.fontSize="0px";
         dark.style.width="0px";
         digitalClock.style.backgroundImage="linear-gradient(#4379F2,#FFEB00,#6EC207,#117554)";
